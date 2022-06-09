@@ -33,22 +33,6 @@ def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
-def get_chat_id(update, context):
-    chat_id = -1
-
-    if update.message is not None:
-        # text message
-        chat_id = update.message.chat.id
-    elif update.callback_query is not None:
-        # callback message
-        chat_id = update.callback_query.message.chat.id
-    elif update.poll is not None:
-        # answer in Poll
-        chat_id = context.bot_data[update.poll.id]
-        
-    update.message.reply_text(chat_id)
-    
-
 def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
@@ -62,7 +46,6 @@ def main():
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
-    dp.add_handler(CommandHandler("chatid", get_chat_id)
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
