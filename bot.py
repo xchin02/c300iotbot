@@ -19,7 +19,7 @@ TOKEN = '5564789137:AAFUVLY-lA5iBoKqsF4WTJ0w4D_kRE_CrqY'
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
+    update.message.reply_text('Welcome to C300IOTbot\nAlerts upon Raspberry Pi attacks automatically!')
 
 def help(update, context):
     """Send a message when the command /help is issued."""
