@@ -1,2 +1,2 @@
 # c300iotbot
-Simple Telegram bot that repsonds to commands through long polling.
+Simple Telegram bot that responds to commands through long polling.
